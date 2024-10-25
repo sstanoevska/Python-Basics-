@@ -46,21 +46,84 @@ while not game_over:
 
     print("Word to guess: " + display)
 
-    # TODO-5: - If the letter is not in the chosen_word, print out the letter and let them know it's not in the word.
-    #  e.g. You guessed d, that's not in the word. You lose a life.
-
     if guess not in chosen_word:
         lives -= 1
         print(f"The letter {guess} is not in the word! You lose a life :(")
         if lives == 0:
             game_over = True
 
-            # TODO 7: - Update the print statement below to give the user the correct word they were trying to guess.
             print(f"You lose! The word was {chosen_word}. Better luck next time!")
 
     if "_" not in display:
         game_over = True
         print("Congratulations! You win!")
 
-    # TODO-2: - Update the code below to use the stages List from the file hangman_art.py
     print(stages[lives])
+
+
+# stages = [r'''
+#   +---+
+#   |   |
+#   O   |
+#  /|\  |
+#  / \  |
+#       |
+# =========
+# ''', r'''
+#   +---+
+#   |   |
+#   O   |
+#  /|\  |
+#  /    |
+#       |
+# =========
+# ''', r'''
+#   +---+
+#   |   |
+#   O   |
+#  /|\  |
+#       |
+#       |
+# =========
+# ''', '''
+#   +---+
+#   |   |
+#   O   |
+#  /|   |
+#       |
+#       |
+# =========''', '''
+#   +---+
+#   |   |
+#   O   |
+#   |   |
+#       |
+#       |
+# =========
+# ''', '''
+#   +---+
+#   |   |
+#   O   |
+#       |
+#       |
+#       |
+# =========
+# ''', '''
+#   +---+
+#   |   |
+#       |
+#       |
+#       |
+#       |
+# =========
+# ''']
+
+# logo = r''' 
+#  _                                             
+# | |                                            
+# | |__   __ _ _ __   __ _ _ __ ___   __ _ _ __  
+# | '_ \ / _` | '_ \ / _` | '_ ` _ \ / _` | '_ \ 
+# | | | | (_| | | | | (_| | | | | | | (_| | | | |
+# |_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
+#                     __/ |                      
+#                    |___/    '''
